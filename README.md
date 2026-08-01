@@ -123,7 +123,7 @@ MP3（192kbps）和 WAV 两种格式，方便直接播放或用剪辑软件进�
 
 ---
 ## 交流群
-<img width="1284" height="2280" alt="qrcode_1785593346923" src="https://github.com/user-attachments/assets/42cc5079-6537-46cc-9ab6-79f95c236955" />
+<img width="300" alt="qrcode_1785593346923" src="https://github.com/user-attachments/assets/42cc5079-6537-46cc-9ab6-79f95c236955" />
 
 
 *感谢使用 ASMRTranslator。祝你拥有舒适的中文 ASMR 体验。*
