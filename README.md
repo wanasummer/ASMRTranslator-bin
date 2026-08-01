@@ -122,6 +122,9 @@ MP3（192kbps）和 WAV 两种格式，方便直接播放或用剪辑软件进�
 | v1.1.0 | 2026-08-01 | 首个公开发布版本（测试版）：四种听音模式、三套 TTS 引擎、说话人自动匹配音色、智能响度对齐、并行加速、断点缓存 |
 
 ---
+## 交流群
+<img width="1284" height="2280" alt="qrcode_1785593346923" src="https://github.com/user-attachments/assets/42cc5079-6537-46cc-9ab6-79f95c236955" />
+
 
 *感谢使用 ASMRTranslator。祝你拥有舒适的中文 ASMR 体验。*
 
