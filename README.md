@@ -79,14 +79,6 @@
 
 > 所有配置会自动保存（写入用户主目录下的 `.asmrts` 文件），下次启动自动恢复。
 
----
-
-## 功能展示
-<img width="1328" height="1024" alt="image" src="https://github.com/user-attachments/assets/12456a49-457a-447f-b986-54bb687514e0" />
-<img width="1328" height="1024" alt="image" src="https://github.com/user-attachments/assets/35427fca-04d4-45eb-88af-8c69653214e8" />
-<img width="1328" height="1024" alt="image" src="https://github.com/user-attachments/assets/d87594cd-aa4b-449d-bd77-305ce4b47922" />
-<img width="1328" height="1024" alt="image" src="https://github.com/user-attachments/assets/2348e62f-2a48-4b93-8615-655ce55b9f5e" />
-
 
 ---
 
