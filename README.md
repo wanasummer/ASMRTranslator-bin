@@ -10,19 +10,19 @@ v1.5.0 起桌面端已由 Electron 重构为 **Tauri 2 + Svelte 5**，采用项�
 
 | 版本 | 安装包 | 大小 | 发布日期 | 下载 |
 | --- | --- | --- | --- | --- |
-| **v1.5.0 测试版** | `ASMRTranslator Studio_1.5.0_x64-setup.exe` | 约 89.3 MB | 2026-08-25 | [下载安装包](ASMRTranslator%20Studio_1.5.0_x64-setup.exe) |
+| **v1.5.1 测试版** | `ASMRTranslator Studio_1.5.1_x64-setup.exe` | 约 89.3 MB | 2026-08-25 | [下载安装包](ASMRTranslator%20Studio_1.5.1_x64-setup.exe) |
 
 SHA-256：
 
 ```text
-69e8eec1eb619853bdedce92b6a31c057a3baa807b98bbdd2087204ce083b08d
+b2f8c182f150b65b89a5db45471c51e3e8c6466ec6ad9a06e217bfc9fa766806
 ```
 
 > 当前安装包尚未进行代码签名。Windows SmartScreen 可能显示“未知发布者”，请核对文件名和 SHA-256 后再运行。
 
 ---
 
-## v1.5.0 更新内容
+## 主要功能
 
 - **全新 Tauri 桌面端**：使用 Tauri 2、Rust 与 Svelte 5 重构界面，替代旧 Electron 客户端。
 - **项目化工作流**：支持创建、打开和删除最近项目，分别管理音频、字幕、配音配置与输出结果。
@@ -116,6 +116,7 @@ SHA-256：
 
 | 版本 | 日期 | 说明 |
 | --- | --- | --- |
+| **v1.5.1** | 2026-08-25 | 修复了一些严重 Bug |
 | **v1.5.0** | 2026-08-25 | 首个 Tauri 2 + Svelte 5 桌面版本：项目、任务与音色工作台，全新 UI，Nuitka 后端，ASR/LLM/音频流程增强 |
 | v1.4.6 | 2026-08-22 | Electron 版：新增 IndexTTS 2.5 本地与云端服务接口 |
 | v1.4.5 | 2026-08-16 | Electron 版：新增 MiniMax TTS、无字幕 ASR 模式与潜意识同传增强 |
