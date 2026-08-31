@@ -1,0 +1,29 @@
+services:
+  chickenrice:
+    build:
+      context: .
+      args:
+        PIP_INDEX_URL: ${CHICKENRICE_PIP_INDEX:-https://pypi.tuna.tsinghua.edu.cn/simple}
+        ENGINE_EXTRA: ${CHICKENRICE_ENGINE_EXTRA:-engine-gpu}
+    ports:
+      - "${CHICKENRICE_PORT:-7870}:7870"
+    env_file:
+      - path: .env
+        required: false
+    environment:
+      CHICKENRICE_HOST: 0.0.0.0
+      CHICKENRICE_PORT: 7870
+      CHICKENRICE_RUNTIME_DIR: /data
+    volumes:
+      - chickenrice-data:/data
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    restart: unless-stopped
+
+volumes:
+  chickenrice-data:

@@ -1,0 +1,28 @@
+{
+  "id": "chickenrice-subtitle-service",
+  "name": "ChickenRice Subtitle Service",
+  "version": "0.3.0",
+  "kind": "subtitle-service",
+  "apiVersion": "2",
+  "capabilities": [
+    "japanese-asr-core",
+    "external-vad-timeline",
+    "optional-chickenrice-vad",
+    "optional-ja-audio-to-zh-subtitles",
+    "webvtt",
+    "local-install",
+    "docker-deploy"
+  ],
+  "defaultEndpoint": "http://127.0.0.1:7870",
+  "healthPath": "/health",
+  "install": {
+    "windows": "install.ps1",
+    "linux": "install.sh",
+    "docker": "compose.yaml"
+  },
+  "license": "MIT",
+  "upstream": {
+    "repository": "https://github.com/TransWithAI/Faster-Whisper-TransWithAI-ChickenRice",
+    "version": "v1.10"
+  }
+}

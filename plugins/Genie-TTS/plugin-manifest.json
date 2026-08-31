@@ -1,0 +1,62 @@
+{
+  "id": "genie-tts-service",
+  "name": "Genie TTS Service",
+  "version": "0.1.0",
+  "kind": "tts-engine-plugin",
+  "apiVersion": "genie-tts/1",
+  "capabilities": [
+    "genie-tts-http-v1",
+    "offline-inference",
+    "voice-cloning",
+    "gpt-sovits-v2",
+    "gpt-sovits-v2-pro-plus",
+    "cpu-inference",
+    "local-install"
+  ],
+  "defaultEndpoint": "http://127.0.0.1:8003",
+  "healthPath": "/health",
+  "voicesPath": "/voices",
+  "jobPath": "/job",
+  "protocol": {
+    "transport": "http",
+    "contract": "API.md",
+    "output": "wav-pcm-s16le-24000hz-mono"
+  },
+  "recommendedConcurrency": 1,
+  "install": {
+    "windows": "install.ps1"
+  },
+  "start": {
+    "windows": "start.ps1"
+  },
+  "package": {
+    "windows": "package.ps1",
+    "excludes": [".venv", "runtime", "dist", "__pycache__", "*.pyc"]
+  },
+  "runtime": {
+    "python": ">=3.10,<3.12",
+    "entrypoint": "genie_tts_service",
+    "dataDirectory": "runtime",
+    "configuration": "runtime/voices.json"
+  },
+  "resources": [
+    {
+      "id": "genie-data",
+      "kind": "huggingface-snapshot",
+      "repository": "High-Logic/Genie",
+      "allowPatterns": ["GenieData/*"],
+      "target": "runtime"
+    },
+    {
+      "id": "custom-character-models",
+      "kind": "user-managed",
+      "target": "runtime/voices"
+    }
+  ],
+  "license": "MIT",
+  "upstream": {
+    "repository": "https://github.com/High-Logic/Genie-TTS",
+    "package": "genie-tts",
+    "version": "2.0.2"
+  }
+}
