@@ -10,13 +10,17 @@
 
 | 版本 | 安装包 | 大小 | 发布日期 | 下载 |
 | --- | --- | --- | --- | --- |
-| **v1.5.2 测试版** | `ASMRTranslator Studio_1.5.2_x64-setup.exe` | 约 120.13 MB | 2026-08-31 | [下载安装包](ASMRTranslator%20Studio_1.5.2_x64-setup.exe) |
+| **v1.5.2 测试版（紧急重发）** | `ASMRTranslator Studio_1.5.2_x64-setup.exe` | 约 122.10 MB | 2026-09-02 | [下载安装包](ASMRTranslator%20Studio_1.5.2_x64-setup.exe) |
 
 SHA-256：
 
 ```text
-F5668E85E065C41CB1D44E53D18BB0D48CBF2F8BD78A505586CB224644C10A64
+FC3B5678D2CD79C2F151CCD37BB6227708911048D44235D9B721ED6B04C6C74E
 ```
+
+> **紧急重发说明（2026-09-02）：** 已回滚未经充分测试的问题构建，修复 MeCab 运行依赖缺失以及 LLM 对 GPT-5.x 系列模型的兼容性问题。此前下载过 v1.5.2 的用户请重新下载安装，并以上方新 SHA-256 为准。
+>
+> 旧问题包 SHA-256 `F5668E85E065C41CB1D44E53D18BB0D48CBF2F8BD78A505586CB224644C10A64` 已停止分发。
 
 > 当前安装包尚未进行代码签名。Windows SmartScreen 可能显示“未知发布者”，请核对文件名和 SHA-256 后再运行。
 
@@ -148,7 +152,7 @@ F5668E85E065C41CB1D44E53D18BB0D48CBF2F8BD78A505586CB224644C10A64
 
 | 版本 | 日期 | 说明 |
 | --- | --- | --- |
-| **v1.5.2** | 2026-08-31 | 项目多音频与独立产物目录；修复重复日志；新增 Genie TTS、CommonASR、Kotoba-Whisper、Parakeet 与 ChickenRice；加入日语清洗、界面缩放和任务队列增强 |
+| **v1.5.2** | 2026-09-02 | 紧急回滚重发：修复 MeCab 运行依赖缺失及 GPT-5.x 模型兼容性问题；项目多音频与独立产物目录；新增 Genie TTS、CommonASR、Kotoba-Whisper、Parakeet 与 ChickenRice |
 | **v1.5.1** | 2026-08-25 | 修复了一些严重 Bug |
 | **v1.5.0** | 2026-08-25 | 首个 Tauri 2 + Svelte 5 桌面版本：项目、任务与音色工作台，全新 UI，Nuitka 后端，ASR/LLM/音频流程增强 |
 | v1.4.6 | 2026-08-22 | Electron 版：新增 IndexTTS 2.5 本地与云端服务接口 |
