@@ -136,6 +136,12 @@ CommonASR、Kotoba-Whisper、Parakeet、ChickenRice、Genie TTS 等插件的安�
 
 ## 常见问题
 
+### 为什么Fish Audio使用报错？
+先检查是否挂了梯子，Fish Audio的ASR和TTS服务都需要梯子。
+
+### 为什么Fish Audio API填写后音色列表为空？
+Fish Audio没有默认音色，需要自己设计/克隆。
+
 ### 没有字幕可以使用吗？
 
 可以。可选择 Fish ASR、兼容 CommonASR 契约的服务或 ChickenRice；如需自动翻译成中文，还要配置文字大模型接口并开启自动翻译。
