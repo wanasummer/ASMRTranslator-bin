@@ -1,5 +1,7 @@
 # ASMRTranslator Studio
 
+插件安装器及插件下载请前往：[ASMRTranslator Plugin 仓库](https://gitee.com/SummerXZ/asmrtranslator-plugin)。
+
 面向日文 ASMR 的中文配音桌面工具。导入原始音频与可选字幕后，可先生成、查看和导出字幕，也可继续制作中文配音并进行听感处理与结果导出。
 
 桌面端采用 **Tauri 2 + Svelte 5**，后端使用 Python/Nuitka 编译，并提供可扩展的 TTS、ASR 与字幕服务插件。
@@ -10,17 +12,31 @@
 
 | 版本 | 安装包 | 大小 | 发布日期 | 下载 |
 | --- | --- | --- | --- | --- |
-| **v1.5.5** | `ASMRTranslator.Studio_1.5.5_x64-setup.exe` | 约 124.01 MiB | 2026-10-05（北京时间） | [下载安装包](https://github.com/wanasummer/ASMRTranslator-bin/releases/download/v1.5.5/ASMRTranslator.Studio_1.5.5_x64-setup.exe) |
+| **v1.5.6** | `ASMRTranslator.Studio_1.5.6_x64-setup.exe` | 约 124.00 MiB | 2026-10-10（北京时间） | [下载安装包](https://github.com/wanasummer/ASMRTranslator-bin/releases/download/v1.5.6/ASMRTranslator.Studio_1.5.6_x64-setup.exe) |
 
-[查看 v1.5.5 发布页](https://github.com/wanasummer/ASMRTranslator-bin/releases/tag/v1.5.5) · [下载校验文件](https://github.com/wanasummer/ASMRTranslator-bin/releases/download/v1.5.5/ASMRTranslator.Studio_1.5.5_x64-setup.exe.sha256)
+[查看 v1.5.6 发布页](https://github.com/wanasummer/ASMRTranslator-bin/releases/tag/v1.5.6) · [下载校验文件](https://github.com/wanasummer/ASMRTranslator-bin/releases/download/v1.5.6/ASMRTranslator.Studio_1.5.6_x64-setup.exe.sha256)
 
 SHA-256：
 
 ```text
-CE1241279206D5E8E17988803A9A8B337D4B5CC5B1278FF04B1DC7DA3FB01794
+8F97D8331CCC6610567C2D2347194BBABF58424866266CABF1BA1514425A5904
 ```
 
 > 当前安装包尚未进行代码签名。Windows SmartScreen 可能显示“未知发布者”，请核对文件名和 SHA-256 后再运行。
+
+---
+
+## v1.5.6 发布说明
+
+### 新功能与体验改进
+
+- 新增启动时自动检查更新，发现新版本后可在标题栏一键下载，完成后自动安装并重启。
+- 更新时显示下载进度、校验和安装状态；转换、排队任务及导出完成后再安装，更新失败时可重试。
+
+### 修复与稳定性改进
+
+- 改善 DeepSeek 字幕翻译和优化，减少未能返回字幕结果的问题。
+- 修复错误日志上报地址，恢复向当前日志服务提交错误报告。
 
 ---
 
@@ -238,6 +254,7 @@ CommonASR、Kotoba-Whisper、Parakeet、ChickenRice、Genie TTS 等插件的安�
 
 | 版本 | 日期 | 说明 |
 | --- | --- | --- |
+| **v1.5.6** | 2026-10-10 | 新增自动检查更新与一键下载安装；显示更新进度并等待任务完成后安装；改善 DeepSeek 字幕处理；修复错误日志上报 |
 | **v1.5.5** | 2026-10-05 | 默认仅生成字幕；任务预检与仅加入队列；最近任务记录与首页布局优化；保留音频标签和封面；后端直连优先与自动代理回退；改善 LLM、ASR 和 Fish Audio 稳定性 |
 | **v1.5.4** | 2026-09-25 | 新增千问和 MiMo 云端 ASR、任务服务预检查、TTS 检测启用、本机插件扫描与连接模式、Fish 社区音色管理、资源并发设置、缓存恢复与清理，以及追加导入音频 |
 | **v1.5.3** | 2026-09-20 | 文件夹导入、多音频批处理与批次控制；项目一键导出；VAD/ASR/日语时间轴增强；结构化错误与开发者诊断；插件迁移至独立仓库；修复 1.5.2 的 VAD、ASR、IndexTTS、布局及错误处理问题 |
