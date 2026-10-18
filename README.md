@@ -1,10 +1,49 @@
 # ASMRTranslator Studio
 
+ASMRTranslator Studio 是一款面向日文 ASMR 的 Windows 桌面工具，可自动识别语音、翻译并生成中文字幕，也能制作中文配音，替换原声、在原声之间插入翻译或与原声同步叠加，支持批量处理和导出。
+
+使用时，先创建项目并导入音频，已有字幕可一并导入；配置识别和翻译服务后即可生成字幕。需要中文配音时，再选择 TTS 服务或插件、音色及听感模式，启动任务并导出结果。
+
 插件安装器及插件下载请前往：[ASMRTranslator Plugin 仓库](https://gitee.com/SummerXZ/asmrtranslator-plugin)。
 
-面向日文 ASMR 的中文配音桌面工具。导入原始音频与可选字幕后，可先生成、查看和导出字幕，也可继续制作中文配音并进行听感处理与结果导出。
+**[图文使用教程](使用教程.md)**：从安装配置到字幕生成、中文配音和批量导出。
 
-桌面端采用 **Tauri 2 + Svelte 5**，后端使用 Python/Nuitka 编译，并提供可扩展的 TTS、ASR 与字幕服务插件。
+界面展示（使用示例项目，每行两张，点击图片查看原图）· [查看完整总览](assets/tutorial/overview-4x4.jpg)
+
+<table style="border-collapse: separate; border-spacing: 4px;">
+  <tr>
+    <td width="50%" align="center"><a href="assets/tutorial/01-home.png"><img src="assets/tutorial/01-home.png" alt="首页与项目入口" width="100%" /></a><br />首页与项目入口</td>
+    <td width="50%" align="center"><a href="assets/tutorial/02-project.png"><img src="assets/tutorial/02-project.png" alt="素材导入与批量选择" width="100%" /></a><br />素材导入与批量选择</td>
+  </tr>
+  <tr>
+    <td width="50%" align="center"><a href="assets/tutorial/03-settings-llm.png"><img src="assets/tutorial/03-settings-llm.png" alt="文字大模型与在线识别" width="100%" /></a><br />文字大模型与在线识别</td>
+    <td width="50%" align="center"><a href="assets/tutorial/04-settings-asr.png"><img src="assets/tutorial/04-settings-asr.png" alt="通用 ASR 插件" width="100%" /></a><br />通用 ASR 插件</td>
+  </tr>
+  <tr>
+    <td width="50%" align="center"><a href="assets/tutorial/05-settings-chickenrice.png"><img src="assets/tutorial/05-settings-chickenrice.png" alt="海南鸡字幕方案" width="100%" /></a><br />海南鸡字幕方案</td>
+    <td width="50%" align="center"><a href="assets/tutorial/06-settings-common-tts.png"><img src="assets/tutorial/06-settings-common-tts.png" alt="通用 TTS 插件" width="100%" /></a><br />通用 TTS 插件</td>
+  </tr>
+  <tr>
+    <td width="50%" align="center"><a href="assets/tutorial/07-studio-subtitles.png"><img src="assets/tutorial/07-studio-subtitles.png" alt="只生成中文字幕" width="100%" /></a><br />只生成中文字幕</td>
+    <td width="50%" align="center"><a href="assets/tutorial/08-studio-edge.png"><img src="assets/tutorial/08-studio-edge.png" alt="中文配音与听感" width="100%" /></a><br />中文配音与听感</td>
+  </tr>
+  <tr>
+    <td width="50%" align="center"><a href="assets/tutorial/09-studio-indextts.png"><img src="assets/tutorial/09-studio-indextts.png" alt="音色与情感参考" width="100%" /></a><br />音色与情感参考</td>
+    <td width="50%" align="center"><a href="assets/tutorial/10-reference-audio.png"><img src="assets/tutorial/10-reference-audio.png" alt="参考音频试听裁切" width="100%" /></a><br />参考音频试听裁切</td>
+  </tr>
+  <tr>
+    <td width="50%" align="center"><a href="assets/tutorial/11-voices.png"><img src="assets/tutorial/11-voices.png" alt="音色库" width="100%" /></a><br />音色库</td>
+    <td width="50%" align="center"><a href="assets/tutorial/12-tasks.png"><img src="assets/tutorial/12-tasks.png" alt="任务队列与插件日志" width="100%" /></a><br />任务队列与插件日志</td>
+  </tr>
+  <tr>
+    <td width="50%" align="center"><a href="assets/tutorial/13-results.png"><img src="assets/tutorial/13-results.png" alt="输出结果与文件" width="100%" /></a><br />输出结果与文件</td>
+    <td width="50%" align="center"><a href="assets/tutorial/14-plugin-catalog.png"><img src="assets/tutorial/14-plugin-catalog.png" alt="六款插件一览" width="100%" /></a><br />六款插件一览</td>
+  </tr>
+  <tr>
+    <td width="50%" align="center"><a href="assets/tutorial/15-plugin-install.png"><img src="assets/tutorial/15-plugin-install.png" alt="插件下载安装" width="100%" /></a><br />插件下载安装</td>
+    <td width="50%" align="center"><a href="assets/tutorial/16-plugin-launch.png"><img src="assets/tutorial/16-plugin-launch.png" alt="插件启动参数" width="100%" /></a><br />插件启动参数</td>
+  </tr>
+</table>
 
 ---
 
@@ -12,118 +51,36 @@
 
 | 版本 | 安装包 | 大小 | 发布日期 | 下载 |
 | --- | --- | --- | --- | --- |
-| **v1.5.6** | `ASMRTranslator.Studio_1.5.6_x64-setup.exe` | 约 124.00 MiB | 2026-10-10（北京时间） | [下载安装包](https://github.com/wanasummer/ASMRTranslator-bin/releases/download/v1.5.6/ASMRTranslator.Studio_1.5.6_x64-setup.exe) |
+| **v1.5.7** | `ASMRTranslator.Studio_1.5.7_x64-setup.exe` | 约 125.82 MiB | 2026-10-18（北京时间） | [下载安装包](https://github.com/wanasummer/ASMRTranslator-bin/releases/download/v1.5.7/ASMRTranslator.Studio_1.5.7_x64-setup.exe) |
 
-[查看 v1.5.6 发布页](https://github.com/wanasummer/ASMRTranslator-bin/releases/tag/v1.5.6) · [下载校验文件](https://github.com/wanasummer/ASMRTranslator-bin/releases/download/v1.5.6/ASMRTranslator.Studio_1.5.6_x64-setup.exe.sha256)
+[查看 v1.5.7 发布页](https://github.com/wanasummer/ASMRTranslator-bin/releases/tag/v1.5.7) · [下载校验文件](https://github.com/wanasummer/ASMRTranslator-bin/releases/download/v1.5.7/ASMRTranslator.Studio_1.5.7_x64-setup.exe.sha256)
 
 SHA-256：
 
 ```text
-8F97D8331CCC6610567C2D2347194BBABF58424866266CABF1BA1514425A5904
+484E3A58D45F44692188566133647BC0FBDE38525629CE9143E2B250081BF9FE
 ```
 
 > 当前安装包尚未进行代码签名。Windows SmartScreen 可能显示“未知发布者”，请核对文件名和 SHA-256 后再运行。
 
 ---
 
-## v1.5.6 发布说明
+## v1.5.7 发布说明
 
 ### 新功能与体验改进
 
-- 新增启动时自动检查更新，发现新版本后可在标题栏一键下载，完成后自动安装并重启。
-- 更新时显示下载进度、校验和安装状态；转换、排队任务及导出完成后再安装，更新失败时可重试。
+- 新增通用 TTS 插件接入，自动识别已安装的插件、端口与参数，支持 Audio8、IndexTTS 和 Genie 等插件及服务器连接。
+- 工作台按所选插件展示音色参考、情感控制与高级合成参数，并随项目保存；支持使用逐段原声作为音色和情感参考。
+- 新增参考音频波形编辑器，支持缩放、试听和裁切选段，选段保存在当前项目中。
+- 识别、翻译和配音支持逐段保存结果；部分片段失败后继续处理其余片段，重试时复用已成功的结果。
+- 任务中心新增插件实时日志，支持调整日志区域大小、查看连接状态和复制本次运行的完整记录；清空显示后仍可复制此前记录。
+- 新增任务异常诊断，任务异常失败时自动上报任务与插件日志。
 
 ### 修复与稳定性改进
 
-- 改善 DeepSeek 字幕翻译和优化，减少未能返回字幕结果的问题。
-- 修复错误日志上报地址，恢复向当前日志服务提交错误报告。
-
----
-
-## v1.5.5 发布说明
-
-### 新功能与体验改进
-
-- 新增并默认选择“仅生成字幕”，无需配置 TTS 即可生成、查看和导出字幕；需要中文配音时再选择对应 TTS 服务。
-- 任务提交时先检查所需服务；检查失败后可选择仅加入队列，准备好服务后再启动任务。
-- 保存最近任务的进度和日志，便于回看处理记录。
-- 优化首页最近项目卡片和滚动布局。
-- 音频成品尽量保留源文件的标签和封面。
-
-### 修复与稳定性改进
-
-- 后端服务请求统一优先直连，连接失败后自动尝试本机已配置的 HTTP / SOCKS5 代理，无需手动选择代理模式；本机回环服务保持直连。
-- 线路回退仅用于建立连接失败；HTTP 业务错误沿用服务自身错误处理，读取或写入失败不会触发线路切换；连接诊断区分直连与代理失败。
-- 改善 Gemini 的限流、繁忙和空响应处理，以及千问 ASR 的连接检测。
-- 修复字幕优化遗漏部分字幕行、Fish Audio 重生成的事件循环复用，以及负数 TTS 参数传递问题。
-- 修复任务预检与取消后的状态处理。
-
-### 使用提示
-
-- 在线服务仍需可用网络、正确凭据及足够额度。必须经代理访问的服务，需要用户自行开启可用代理；软件不会提供代理服务。
-- 应用层直连无法绕过系统 TUN / VPN。代理退出后若仍有 DNS 或虚拟网卡残留，可能继续影响网络连接。
-- 本地 ASR / TTS 插件需单独安装并启动。
-
----
-
-## v1.5.4 发布说明
-
-### 新特性
-
-| # | 新特性 |
-| --- | --- |
-| 1 | 新增千问 Qwen-Audio 3.1 ASR Flash、千问 Fun-ASR 和小米 MiMo-V2.5-ASR。千问支持国内服务配置；Qwen-Audio 需填写 Workspace ID。MiMo 的日语识别为实验功能。 |
-| 2 | 新增任务启动前的服务检查，逐项检测所需的文字大模型、ASR/海南鸡及 TTS，展示检查进度与失败原因，检查失败时阻止任务启动。 |
-| 3 | 设置页集中配置 TTS 服务并提供连接检测；除 Edge TTS 外，服务需检测通过后才会出现在工作台和音色库，修改配置后需重新检测。 |
-| 4 | 自定义 ASR、IndexTTS、Genie 和海南鸡新增“本机 / 服务器”连接模式。本机默认使用 `127.0.0.1`，自动读取插件安装器记录的端口，也可点击“扫描本地插件”回填；服务器模式手动填写地址、端口和适用的可选 API Key。本机模式隐藏可选 API Key，并清除旧 Key。 |
-| 5 | Fish Audio 新增可移除的默认社区音色，以及通过音色 ID 和名称添加社区音色的功能；保存的社区音色与账户音色统一显示在音色库和工作台中。 |
-| 6 | 新增音频处理线程和网络并发设置，可选择 Auto 自动分配，也可手动限制并发数量。 |
-| 7 | 重试任务时保留中间缓存，支持恢复已完成的 ASR 字幕，并复用已有 TTS 与音频处理片段；项目页新增“清除缓存”，可按勾选音频清理中间文件。 |
-| 8 | 项目音频改为追加导入：选择单个文件仅加入该音频，选择文件夹加入扫描到的音频，可从多个位置持续添加素材。 |
-
-### 修复与改进
-
-- 改善并发 TTS 的稳定性和 Fish Audio 错误处理，减少服务异常时的无效重试。
-- 增强流水线日志的线程安全性，在原始输出流不可用时继续保留文件日志。
-- 统一处理 ASR 服务明确返回的“无可识别语音”，将其作为空识别结果处理，避免直接中断任务。
-- 改善项目扫描和重复导入，排除任务产物及切片目录，避免把生成文件再次加入音频列表。
-
-### 升级后使用提示
-
-- 首次使用在线或自托管 TTS 时，请先在设置页执行“检测并启用”。
-- 本机插件仍需通过插件安装器安装并启动；扫描到配置不代表服务已经运行。
-- 修改源音频、识别方案、音色或合成参数后，如需完全重新生成，请先清除对应音频缓存；缓存尚不支持完整的内容与配置变化检测。
-- 清除缓存保留源音频、手动字幕、最终成品、诊断日志和已导出文件；存在活动任务的音频不能清理。
-
----
-
-## v1.5.3 发布说明
-
-#### 新特性
-
-| # | 新特性 |
-| --- | --- |
-| 1 | 新增文件夹导入和项目音频资产列表，支持多音频批量处理、任务队列及批次控制。 |
-| 2 | 新增项目一键导出，能够批量导出最终 MP3 和 WebVTT 字幕，并维护导出清单。 |
-| 3 | 新增 VAD 人声分析、ASR 切片优化和时间轴重新对齐，改善长音频及低语音频识别效果。 |
-| 4 | 新增基于 MeCab 的日语句子检测与时间轴对齐，增强从句、固定表达和连续语句处理。 |
-| 5 | ASR 适配器支持外部时间轴及语音块恢复，提升字幕分段信息的完整性。 |
-| 6 | 新增结构化错误体系、错误弹窗和异步错误日志上报，便于定位流水线失败原因。 |
-| 7 | 新增开发者诊断工具，包括 rrweb 操作记录、控制台日志及插件异步日志转发。 |
-| 8 | 任务开始或重试时自动选中对应任务，同时避免后续进度事件频繁抢占当前选择。 |
-| 9 | 插件改为独立仓库维护，精简主仓库；增强 IndexTTS Gradio 接口自动发现和远程服务兼容性。 |
-| 10 | Windows CI 支持标签触发后自动构建安装包并发布到二进制 Release 仓库。 |
-
-#### Bug 修复
-
-| # | 修复内容 |
-| --- | --- |
-| 1 | 修复 VAD 尾部 padding 和人声结束时间可能超过音频真实时长，导致切片或时间轴异常的问题。 |
-| 2 | 修复本地 ASR 服务连通测试可能受系统代理影响的问题。 |
-| 3 | 修复 IndexTTS 自定义 Gradio 路由、局域网资源地址及音频下载中断兼容问题。 |
-| 4 | 修复项目音频列表空状态未完全居中、布局显示不正确的问题。 |
-| 5 | 修复错误日志上传默认地址错误的问题。 |
-| 6 | 改善流水线阶段异常转换和 TTS 快速失败行为，避免底层异常直接泄漏到界面。 |
+- 修复 Edge TTS 无法正常合成语音的问题，并改善访问被拒绝时的错误提示。
+- 修复本机 ASR 扫描可能选中未就绪服务或错误端口的问题，优先选择已正常运行的插件。
+- 修复极短音频片段导致最终音频合并中断的问题。
 
 ---
 
@@ -133,9 +90,9 @@ SHA-256：
 - **项目化工作流**：创建或打开项目，通过文件或文件夹导入维护项目音频资产，并分别管理字幕、配音配置和每段音频的输出结果。
 - **批量任务中心**：查看阶段、总进度、实时日志和最终输出，支持任务队列、取消任务、批次启动与批次控制。
 - **项目一键导出**：批量导出最终 MP3 与 WebVTT 字幕，并维护导出清单。
-- **六套 TTS 引擎**：Edge TTS、MiMo TTS、Fish Audio、MiniMax、IndexTTS 2.5 与 Genie TTS。
+- **TTS 引擎**：Edge TTS、MiMo TTS、Fish Audio、MiniMax 与通用 TTS 插件（Audio8 TTS、IndexTTS 2.5、Genie TTS）。
 - **音色工作台**：浏览和管理音色；支持 Fish 社区音色、服务商音色设计、参考音频克隆及本地音色导入。
-- **可扩展 ASR**：支持 Fish ASR、千问 Qwen-Audio / Fun-ASR、小米 MiMo ASR（日语实验）、通用 ASR HTTP 服务和 ChickenRice 字幕服务。
+- **可扩展 ASR**：支持 Fish ASR、千问 Qwen-Audio / Fun-ASR、小米 MiMo ASR（日语实验）、Kotoba-Whisper、Parakeet 等通用 ASR 服务和 ChickenRice（海南鸡）字幕服务。
 - **服务检测与插件扫描**：任务启动前检查所需服务；本机插件可自动读取安装器配置并回填端口。
 - **缓存恢复与清理**：重试时复用已完成阶段，按音频清理中间缓存。
 - **无字幕处理**：使用本地 FSMN-VAD 检测语音区间，再进行识别、翻译和字幕优化。
@@ -164,8 +121,9 @@ SHA-256：
 | **MiMo TTS** | 标准音色、文字音色设计、参考音频克隆 | 需要 MiMo API Key |
 | **Fish Audio** | 免费/高质量模型、音色库、音色设计与克隆 | 需要 Fish Audio API Key |
 | **MiniMax** | 高质量与快速模型、系统及自定义音色 | 需要 MiniMax API Key |
-| **IndexTTS 2.5** | 自托管参考音频克隆、情感权重 | 需要自行准备本地或云端服务 |
-| **Genie TTS** | 本地离线推理、GPT-SoVITS 音色克隆 | 通过独立插件仓库安装模型与服务 |
+| **通用 TTS 插件** | 目前包含 Audio8 TTS、IndexTTS 2.5、Genie TTS | 通过独立插件仓库安装模型与服务 |
+
+插件仓库还提供 ChickenRice（海南鸡）字幕服务，以及 Kotoba-Whisper、Parakeet 两款 ASR 插件。
 
 在线接口的可用模型、额度和计费以各服务商规则为准。
 
@@ -189,7 +147,13 @@ SHA-256：
 
 - [ASMRTranslator Plugin](https://gitee.com/SummerXZ/asmrtranslator-plugin)
 
-CommonASR、Kotoba-Whisper、Parakeet、ChickenRice、Genie TTS 等插件的安装文件、部署说明与开发接口文档，请前往插件仓库获取。第三方服务只要遵守对应接口契约，即可在不修改 ASMRTranslator 主流程的情况下接入。
+目前提供以下 6 款插件：
+
+- **TTS 语音合成**：Audio8 TTS、IndexTTS 2.5、Genie TTS。
+- **ASR 语音识别**：Kotoba-Whisper、Parakeet。
+- **字幕服务**：ChickenRice（海南鸡）。
+
+插件的安装文件、部署说明与开发接口文档，请前往插件仓库获取。第三方服务只要遵守对应接口契约，即可在不修改 ASMRTranslator 主流程的情况下接入。
 
 ---
 
@@ -220,10 +184,6 @@ CommonASR、Kotoba-Whisper、Parakeet、ChickenRice、Genie TTS 等插件的安�
 
 先在设置页测试连接，检查 API Key、账户额度和网络是否能访问 Fish Audio 服务。若启用了代理，请检查其配置；界面的具体错误信息可帮助区分网络、凭据和服务限流问题。
 
-### 为什么填写 Fish Audio API Key 后音色列表仍为空？
-
-先在设置页选择 Fish Audio 并执行“检测并启用”。v1.5.4 为新配置提供可移除的默认社区音色，也支持通过音色 ID 和名称添加社区音色，或自行设计、克隆音色。移除社区音色只会修改软件内的收藏列表，不会删除社区原音色。
-
 ### 没有字幕可以使用吗？
 
 可以。可选择 Fish ASR、千问 Qwen-Audio / Fun-ASR、小米 MiMo ASR（日语实验）、兼容 CommonASR 契约的服务或 ChickenRice；如需将日语识别结果自动翻译成中文，还要配置文字大模型接口并开启自动翻译。
@@ -242,7 +202,7 @@ CommonASR、Kotoba-Whisper、Parakeet、ChickenRice、Genie TTS 等插件的安�
 
 ### IndexTTS 应该怎样连接？
 
-在设置页选择 IndexTTS 2.5：本机模式会读取插件安装器记录的端口，也可点击“扫描本地插件”；服务器模式手动填写地址和端口，默认端口为 `7860`。检测通过后，在工作台选择一段清晰的单人参考音频。
+在设置页选择“通用 TTS 插件（自动识别）”，在已安装插件中选择 IndexTTS 2.5，本机模式会自动读取端口；服务器模式填写服务地址后点击“重新识别插件”。检测并启用后，在工作台设置音色与情感参考。
 
 ### 为什么 Windows 提示未知发布者？
 
@@ -254,6 +214,7 @@ CommonASR、Kotoba-Whisper、Parakeet、ChickenRice、Genie TTS 等插件的安�
 
 | 版本 | 日期 | 说明 |
 | --- | --- | --- |
+| **v1.5.7** | 2026-10-18 | 新增通用 TTS 插件识别与参数配置、参考音频试听裁切、逐段结果缓存、插件实时日志和任务异常诊断；修复 Edge TTS 合成、本机 ASR 插件扫描及短音频合并问题 |
 | **v1.5.6** | 2026-10-10 | 新增自动检查更新与一键下载安装；显示更新进度并等待任务完成后安装；改善 DeepSeek 字幕处理；修复错误日志上报 |
 | **v1.5.5** | 2026-10-05 | 默认仅生成字幕；任务预检与仅加入队列；最近任务记录与首页布局优化；保留音频标签和封面；后端直连优先与自动代理回退；改善 LLM、ASR 和 Fish Audio 稳定性 |
 | **v1.5.4** | 2026-09-25 | 新增千问和 MiMo 云端 ASR、任务服务预检查、TTS 检测启用、本机插件扫描与连接模式、Fish 社区音色管理、资源并发设置、缓存恢复与清理，以及追加导入音频 |
