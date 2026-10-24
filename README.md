@@ -143,6 +143,8 @@ SHA-256：
 
 ## 插件与二次开发
 
+后端源码现已公开：[ASMRTranslator Backend](https://github.com/wanasummer/ASMRTranslator-backend)。运行、开发与构建说明请参阅后端仓库；源码采用 PolyForm Noncommercial 1.0.0 许可，仅限许可规定的非商业用途。
+
 插件已从本发布仓库移除，现统一在独立仓库维护：
 
 - [ASMRTranslator Plugin](https://gitee.com/SummerXZ/asmrtranslator-plugin)
