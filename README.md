@@ -15,7 +15,7 @@
 
   <p>
     <a href="#下载最新版"><b>⬇️ 下载最新版</b></a> ·
-    <a href="#v161-更新说明对比-v157"><b>✨ v1.6.1 更新说明</b></a> ·
+    <a href="#v162-更新说明对比-v157"><b>✨ v1.6.2 更新说明</b></a> ·
     <a href="使用教程.md"><b>📖 图文使用教程</b></a> ·
     <a href="#界面展示"><b>🖼️ 界面展示</b></a> ·
     <a href="https://gitee.com/SummerXZ/asmrtranslator-plugin"><b>🧩 本地插件下载</b></a> ·
@@ -42,21 +42,24 @@
 
 | 版本 | 安装包 | 大小 | 发布日期 | 下载 |
 | --- | --- | --- | --- | --- |
-| **v1.6.1** | `ASMRTranslator.Studio_1.6.1_x64-setup.exe` | 约 128.24 MiB | 2026-11-22（北京时间） | [下载安装包](https://github.com/wanasummer/ASMRTranslator-bin/releases/download/v1.6.1/ASMRTranslator.Studio_1.6.1_x64-setup.exe) |
+| **v1.6.2** | `ASMRTranslator.Studio_1.6.2_x64-setup.exe` | 约 128.25 MiB | 2026-11-23（北京时间） | [下载安装包](https://github.com/wanasummer/ASMRTranslator-bin/releases/download/v1.6.2/ASMRTranslator.Studio_1.6.2_x64-setup.exe) |
 
-[查看 v1.6.1 发布页](https://github.com/wanasummer/ASMRTranslator-bin/releases/tag/v1.6.1) · [下载校验文件](https://github.com/wanasummer/ASMRTranslator-bin/releases/download/v1.6.1/ASMRTranslator.Studio_1.6.1_x64-setup.exe.sha256)
+[查看 v1.6.2 发布页](https://github.com/wanasummer/ASMRTranslator-bin/releases/tag/v1.6.2) · [下载校验文件](https://github.com/wanasummer/ASMRTranslator-bin/releases/download/v1.6.2/ASMRTranslator.Studio_1.6.2_x64-setup.exe.sha256)
 
 SHA-256：
 
 ```text
-7B72D860FF8760F0C5E753181E772391A7294AD52EF7BCF806AFA688CA6ED166
+625426EFBB4830A1111A4707CDDFEE0018605B63C049E76C072BAA76802D2638
 ```
 
 > 当前安装包尚未进行代码签名。Windows SmartScreen 可能显示“未知发布者”，请核对文件名和 SHA-256 后再运行。
 
 ---
 
-## v1.6.1 更新说明（对比 v1.5.7）
+## v1.6.2 更新说明（对比 v1.5.7）
+
+> [!IMPORTANT]
+> **紧急修复说明（v1.6.1 用户请务必升级）**：`v1.6.1` 在打包单文件运行环境下存在无法定位内置 `ffmpeg` 的缺陷，会导致任务在最后一步编排变速与合并时报错中断（`AUDIO_JOIN_FAILED: 未找到随应用提供的 ffmpeg`）。**`v1.6.2` 已彻底修复该问题**，并完整保留 `v1.5.7` 之后新增的全部功能与优化，请直接升级至 `v1.6.2`。
 
 ### 新功能与体验改进
 
@@ -71,6 +74,7 @@ SHA-256：
 
 ### 修复与稳定性改进
 
+- **紧急修复（v1.6.2）**：修复 v1.6.1 打包单文件运行环境下无法定位内置 `ffmpeg` 导致编排变速与最终音频合并失败（`AUDIO_JOIN_FAILED`）的问题，并对前端音频工具路径增加进程内存级缓存。
 - 修复设置页服务连接模式（本机/服务器等）切换后未能显式持久化保存的问题。
 - 修复多种文本编码（UTF-8/16/32、GBK、Shift-JIS 等）字幕导入时的乱码与解析失败问题。
 - 修复保留原声试听起点异常、大倍率变速播放卡顿、合并块边界丢失及刷新渲染片段异常的问题。
@@ -237,7 +241,8 @@ SHA-256：
 
 | 版本 | 日期 | 说明 |
 | --- | --- | --- |
-| **v1.6.1** | 2026-11-22 | 新增 DeepSeek ASR 语音识别引擎；Fish Audio 新增 `drama-3` 高表现力模型及费率标识；修复设置页服务连接模式持久化问题 |
+| **v1.6.2** | 2026-11-23 | 紧急修复 v1.6.1 打包环境下最终音频合并与变速找不到内置 ffmpeg（`AUDIO_JOIN_FAILED`）的问题；新增内置音频工具路径进程内存缓存与打包净室自动化验收 |
+| **v1.6.1** | 2026-11-22 | 新增 DeepSeek ASR 语音识别引擎；Fish Audio 新增 `drama-3` 高表现力模型及费率标识；修复设置页服务连接模式持久化问题（存在打包后音频合并缺陷，请使用 v1.6.2） |
 | **v1.6.0** | 2026-11-21 | 新增音频编排工作台与双保留原声时间轴编辑、逐句独立配音参数、指令式全局字幕优化、MOSS/ASR Boost/ASMR VAD 识别与对齐、UVR 人声分离、直接打开音频/文件夹为项目、高音质导出与封面嵌入；项目数据统一管理并修复编码导入、试听与导出时间轴等问题 |
 | **v1.5.7** | 2026-10-18 | 新增通用 TTS 插件识别与参数配置、参考音频试听裁切、逐段结果缓存、插件实时日志和任务异常诊断；修复 Edge TTS 合成、本机 ASR 插件扫描及短音频合并问题 |
 | **v1.5.6** | 2026-10-10 | 新增自动检查更新与一键下载安装；显示更新进度并等待任务完成后安装；改善 DeepSeek 字幕处理；修复错误日志上报 |
